@@ -1,6 +1,6 @@
 import express from "express";
 import { signAccessJWT, signRefreshJWT } from "../utils/jwt.js";
-import { auth } from "../middlewares/authMiddleware.js";
+import { auth, refreshAuth } from "../middlewares/authMiddleware.js";
 import { createNewUser, getUserByEmail } from "../models/user/UserModel.js";
 import { comparePassword, hashPassword } from "../utils/bcrypt.js";
 
@@ -80,6 +80,16 @@ router.get("/", auth, (req, res, next) => {
       message: "User Profile",
       user: req.userInfo,
     });
+  } catch (error) {
+    next(error);
+  }
+});
+
+router.get("/refresh-accessjwt", refreshAuth, (req, res, next) => {
+  try {
+    const { email } = req.userInfo;
+    const accessJWT = singAccessJWT({ email });
+    res.json({ accessJWT });
   } catch (error) {
     next(error);
   }

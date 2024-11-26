@@ -33,7 +33,7 @@ export const signRefreshJWT = ({ email }) => {
 
 export const verifyRefreshJWT = (token) => {
   try {
-    return JWT.verify(token, process.env.REFRESH_JWT_SECRET);
+    return JWT.verify(token, config.jwt.refreshSecret);
   } catch (error) {
     return "Invalid Token";
   }
