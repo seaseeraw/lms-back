@@ -8,6 +8,7 @@ export const config = {
   },
   jwt: {
     secret: process.env.JWT_SECRET || "secret",
+    refreshSecret: process.env.JWT_REFRESH_SECRET || "refresh",
     expiresIn: process.env.JWT_EXPIRE || "1d",
   },
 };

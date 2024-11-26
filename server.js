@@ -2,6 +2,7 @@ import express from "express";
 import cors from "cors";
 import { config } from "./src/config/config.js";
 import { connectMongoDB } from "./src/config/mongoConfig.js";
+import userRouter from "./src/routes/userRouter.js";
 
 // Express
 const app = express();
@@ -10,6 +11,8 @@ const PORT = config.port;
 // Middlewares
 app.use(cors());
 app.use(express.json());
+
+app.use("/api/v1/users", userRouter);
 
 // default response
 app.get("/", (req, res) => {

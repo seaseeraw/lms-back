@@ -1,0 +1,28 @@
+@rootURL = http://localhost:8000
+@apiEP = {{rootURL}}/api/v1
+@userAPI = {{apiEP}}/users
+
+### Post user 
+POST {{userAPI}}
+Content-Type: application/json
+
+{
+    "fName": "test",
+    "lName": "shrestha",
+    "phone": "4104444444",
+    "email": "test@gmail.com",
+    "password": "123456"
+}
+
+### Login user 
+POST {{userAPI}}/login
+Content-Type: application/json
+
+{
+    "email": "test@gmail.com",
+    "password": "123456"
+}
+
+### user profile
+GET {{userAPI}}
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InRlc3RAZ21haWwuY29tIiwiaWF0IjoxNzMyNjYyOTY0LCJleHAiOjE3MzI2NjM4NjR9.3G9RMWQA-teOkF2b4P3IUbUhtsBx3pYmt20zPWfFvlc
