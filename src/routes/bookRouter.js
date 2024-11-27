@@ -62,7 +62,7 @@ router.put(
 );
 
 // get all books
-router.get("/all", async (req, res, next) => {
+router.get("/all", auth, isAdmin, async (req, res, next) => {
   try {
     // get all active books
     const books = await getAllBooks();
@@ -70,6 +70,22 @@ router.get("/all", async (req, res, next) => {
     res.json({
       status: "success",
       books,
+    });
+  } catch (error) {
+    next(error);
+  }
+});
+
+// delete book
+router.delete("/:_id", async (req, res, next) => {
+  try {
+    const { _id } = req.params;
+
+    const response = await deleteABookById(_id);
+
+    res.json({
+      status: "success",
+      message: "Book deleted!",
     });
   } catch (error) {
     next(error);

@@ -49,7 +49,7 @@ Content-Type: application/json
     "description": "Learning JS"
 }
 
-### protected - update book detail
+### protected - amdin- update book detail
 PUT {{bookAPI}}/67466e41d46b0856784987d7
 Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InRlc3RAZ21haWwuY29tIiwiaWF0IjoxNzMyNjY5MDc0LCJleHAiOjE3MzI2Njk5NzR9.4REtP85PZVQXpGx36ggLWe0Btp_-gnbQCN10C1H5DTo
 Content-Type: application/json
@@ -63,9 +63,17 @@ Content-Type: application/json
     "status": "inactive"
 }
 
-### public - get book by id 
-GET {{bookAPI}}/672be499c354cdbec33c9c95
+### protected - admin - delete by id
+DELETE {{bookAPI}}/67466e41d46b0856784987d7
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InRlc3RAZ21haWwuY29tIiwiaWF0IjoxNzMyNjY5MDc0LCJleHAiOjE3MzI2Njk5NzR9.4REtP85PZVQXpGx36ggLWe0Btp_-gnbQCN10C1H5DTo
 
-### public - get all books 
+### protected - admin - get all books 
 GET {{bookAPI}}/all
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InRlc3RAZ21haWwuY29tIiwiaWF0IjoxNzMyNjY5MDc0LCJleHAiOjE3MzI2Njk5NzR9.4REtP85PZVQXpGx36ggLWe0Btp_-gnbQCN10C1H5DTo
+
+### public - get book by id 
+GET {{bookAPI}}/6746706dd46b0856784987e6
+### public - get book by id 
+GET {{bookAPI}}
+
 

@@ -33,7 +33,6 @@ export const newUserValidation = (req, res, next) => {
 };
 
 export const newBookValidation = (req, res, next) => {
-  console.log("BOOK VALIDATION");
   const schema = Joi.object({
     title: STR_REQUIRED,
     author: STR_REQUIRED,

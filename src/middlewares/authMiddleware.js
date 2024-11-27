@@ -43,7 +43,7 @@ export const auth = async (req, res, next) => {
 };
 
 export const isAdmin = async (req, res, next) => {
-  req.userInfo.role === "admin" || true
+  req.userInfo.role === "admin"
     ? next()
     : next({
         status: 403,
