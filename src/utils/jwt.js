@@ -22,7 +22,7 @@ export const verifyAccessJWT = (token) => {
 
 // create refresh jwt
 export const signRefreshJWT = ({ email }) => {
-  const refreshJWT = JWT.sign({ email }, config.jwt.secret, {
+  const refreshJWT = JWT.sign({ email }, config.jwt.refreshSecret, {
     expiresIn: "30d",
   });
   updateUser({ email }, { refreshJWT });

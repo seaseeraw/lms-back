@@ -88,9 +88,10 @@ router.get("/", auth, (req, res, next) => {
 router.get("/refresh-accessjwt", refreshAuth, (req, res, next) => {
   try {
     const { email } = req.userInfo;
-    const accessJWT = singAccessJWT({ email });
+    const accessJWT = signAccessJWT({ email });
     res.json({ accessJWT });
   } catch (error) {
+    console.log(error);
     next(error);
   }
 });

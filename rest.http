@@ -25,4 +25,8 @@ Content-Type: application/json
 
 ### user profile
 GET {{userAPI}}
-Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InRlc3RAZ21haWwuY29tIiwiaWF0IjoxNzMyNjYyOTY0LCJleHAiOjE3MzI2NjM4NjR9.3G9RMWQA-teOkF2b4P3IUbUhtsBx3pYmt20zPWfFvlc
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InRlc3RAZ21haWwuY29tIiwiaWF0IjoxNzMyNjY1MzY0LCJleHAiOjE3MzI2NjYyNjR9.o1qCL8m4zU2Ezps1uGMytluS_r871CBz0vzy21EzfTc
+
+### get new access jwt
+GET {{userAPI}}/refresh-accessjwt
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InRlc3RAZ21haWwuY29tIiwiaWF0IjoxNzMyNjY1NjI3LCJleHAiOjE3MzUyNTc2Mjd9.webED2MEpMJAe_KuexcvqDzBkwxIaQsOGrIUVFBsVOE
