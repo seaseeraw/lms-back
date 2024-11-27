@@ -1,6 +1,7 @@
 @rootURL = http://localhost:8000
 @apiEP = {{rootURL}}/api/v1
 @userAPI = {{apiEP}}/users
+@bookAPI = {{apiEP}}/books
 
 ### Post user 
 POST {{userAPI}}
@@ -30,3 +31,41 @@ Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InRlc3RAZ21haWwu
 ### get new access jwt
 GET {{userAPI}}/refresh-accessjwt
 Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InRlc3RAZ21haWwuY29tIiwiaWF0IjoxNzMyNjY1NjI3LCJleHAiOjE3MzUyNTc2Mjd9.webED2MEpMJAe_KuexcvqDzBkwxIaQsOGrIUVFBsVOE
+
+
+### BOOK MANAGEMENT APIs
+
+### protected - admin - create book
+POST {{bookAPI}}
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InRlc3RAZ21haWwuY29tIiwiaWF0IjoxNzMyNjY3NDE5LCJleHAiOjE3MzI2NjgzMTl9.56uNrVMA0ehQ-MZYJ8JZofsbShTsZ-cUv-RPBt1BrK8
+Content-Type: application/json
+
+{
+    "title": "Learning JS",
+    "author": "JS MAN",
+    "thumbnail": "https://randomuser.me/api/portraits/men/59.jpg",
+    "isbn": "12345667",
+    "publishedYear": 1992,
+    "description": "Learning JS"
+}
+
+### protected - update book detail
+PUT {{bookAPI}}/67466e41d46b0856784987d7
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InRlc3RAZ21haWwuY29tIiwiaWF0IjoxNzMyNjY5MDc0LCJleHAiOjE3MzI2Njk5NzR9.4REtP85PZVQXpGx36ggLWe0Btp_-gnbQCN10C1H5DTo
+Content-Type: application/json
+
+{
+    "title": "Learning JS",
+    "author": "JS MAN",
+    "thumbnail": "https://randomuser.me/api/portraits/men/59.jpg",
+    "publishedYear": 1992,
+    "description": "Learning JS",
+    "status": "inactive"
+}
+
+### public - get book by id 
+GET {{bookAPI}}/672be499c354cdbec33c9c95
+
+### public - get all books 
+GET {{bookAPI}}/all
+

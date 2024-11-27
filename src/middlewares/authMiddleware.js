@@ -1,3 +1,4 @@
+import { decode } from "jsonwebtoken";
 import { findToken } from "../models/session/SessionSchema.js";
 import { getUserByEmail } from "../models/user/UserModel.js";
 import { verifyAccessJWT, verifyRefreshJWT } from "../utils/jwt.js";
@@ -10,7 +11,6 @@ export const auth = async (req, res, next) => {
 
     // 2. verify if jwt is valid(no expired, secretkey) by decoding jwt
     const decoded = verifyAccessJWT(authorization);
-
     if (decoded?.email) {
       // 3. Check if the token exist in the DB, session table
       const tokenObj = await findToken(authorization);
@@ -27,7 +27,6 @@ export const auth = async (req, res, next) => {
 
           // fill the req.userInfo
           req.userInfo = user;
-
           return next();
         }
       }
@@ -37,11 +36,19 @@ export const auth = async (req, res, next) => {
       message: decoded,
       status: 403,
     };
-
     next(error);
   } catch (error) {
     next(error);
   }
+};
+
+export const isAdmin = async (req, res, next) => {
+  req.userInfo.role === "admin" || true
+    ? next()
+    : next({
+        status: 403,
+        message: "Unauthorized",
+      });
 };
 
 export const refreshAuth = async (req, res, next) => {
@@ -52,7 +59,6 @@ export const refreshAuth = async (req, res, next) => {
 
     // 2. verify if jwt is valid(no expired, secretkey) by decoding jwt
     const decoded = verifyRefreshJWT(authorization);
-    console.log(1, decoded);
     if (decoded?.email) {
       // 3. Check if the token exist in the DB, session table
 
@@ -71,12 +77,8 @@ export const refreshAuth = async (req, res, next) => {
       message: decoded,
       status: 403,
     };
-    console.log(error);
-
     next(error);
   } catch (error) {
-    console.log(error);
-
     next(error);
   }
 };

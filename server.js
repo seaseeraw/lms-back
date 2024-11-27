@@ -3,6 +3,7 @@ import cors from "cors";
 import { config } from "./src/config/config.js";
 import { connectMongoDB } from "./src/config/mongoConfig.js";
 import userRouter from "./src/routes/userRouter.js";
+import bookRouter from "./src/routes/bookRouter.js";
 
 // Express
 const app = express();
@@ -12,7 +13,10 @@ const PORT = config.port;
 app.use(cors());
 app.use(express.json());
 
+// user api
 app.use("/api/v1/users", userRouter);
+// book management api
+app.use("/api/v1/books", bookRouter);
 
 // default response
 app.get("/", (req, res) => {
@@ -26,6 +30,17 @@ app.get("/api-health", (req, res) => {
     status: "UP",
     message: "Server is healthy",
     timestamp: new Date().toISOString(),
+  });
+});
+
+//global error handler
+app.use((error, req, res, next) => {
+  console.log(error.message, "=======");
+
+  res.status(error.status || 500);
+  res.json({
+    status: "error",
+    message: error.message,
   });
 });
 
