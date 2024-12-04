@@ -4,6 +4,7 @@ import { config } from "./src/config/config.js";
 import { connectMongoDB } from "./src/config/mongoConfig.js";
 import userRouter from "./src/routes/userRouter.js";
 import bookRouter from "./src/routes/bookRouter.js";
+import borrowRouter from "./src/routes/borrowRouter.js";
 
 // Express
 const app = express();
@@ -17,6 +18,13 @@ app.use(express.json());
 app.use("/api/v1/users", userRouter);
 // book management api
 app.use("/api/v1/books", bookRouter);
+// student routes
+app.use("/api/v1/students", () => {
+  console.log("STUDENT ROUTE");
+});
+
+// borrow routes
+app.use("/api/v1/borrow", borrowRouter);
 
 // default response
 app.get("/", (req, res) => {

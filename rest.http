@@ -2,6 +2,7 @@
 @apiEP = {{rootURL}}/api/v1
 @userAPI = {{apiEP}}/users
 @bookAPI = {{apiEP}}/books
+@borrowAPI = {{apiEP}}/borrow
 
 ### Post user 
 POST {{userAPI}}
@@ -20,7 +21,7 @@ POST {{userAPI}}/login
 Content-Type: application/json
 
 {
-    "email": "test@gmail.com",
+    "email": "john@gmail.com",
     "password": "123456"
 }
 
@@ -76,4 +77,15 @@ GET {{bookAPI}}/6746706dd46b0856784987e6
 ### public - get book by id 
 GET {{bookAPI}}
 
+### burro API
+###
+POST {{borrowAPI}}
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImpvaG5AZ21haWwuY29tIiwiaWF0IjoxNzMzMzU0NzAxLCJleHAiOjE3MzMzNTU2MDF9.cI_8v84jtUAHzwWs0ovzH_0nBEgpGdit1lhHKV3IZEQ
+Content-Type: application/json
+
+{
+    "bookId": "674aa63a248fa97bd069435d",
+    "bookTitle": "HTML & CSS for Beginners",
+    "thumbnail": "http://localhost:5174/assets/book4.jpg"
+}
 
