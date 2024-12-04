@@ -6,6 +6,7 @@ import {
   updateBookValidation,
 } from "../middlewares/joiValidation.js";
 import {
+  deleteABookById,
   getABookById,
   getAllBooks,
   insertBook,
@@ -77,7 +78,7 @@ router.get("/all", auth, isAdmin, async (req, res, next) => {
 });
 
 // delete book
-router.delete("/:_id", async (req, res, next) => {
+router.delete("/:_id", auth, isAdmin, async (req, res, next) => {
   try {
     const { _id } = req.params;
 
