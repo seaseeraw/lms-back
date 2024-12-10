@@ -1,10 +1,10 @@
 import { getABookById, updateABookById } from "../models/books/BookModel.js";
-import { insertBurrow } from "../models/borrowHistory/BorrowModel.js";
+import { insertBorrow } from "../models/borrowHistory/BorrowModel.js";
 
-// Due date is 15 days from burrow date
+// Due date is 15 days from borrow date
 const DUE_DURATION = 15;
 
-export const createBurrowRecord = async (req, res, next) => {
+export const createBorrowRecord = async (req, res, next) => {
   try {
     const { _id, name } = req.userInfo;
 
@@ -23,10 +23,10 @@ export const createBurrowRecord = async (req, res, next) => {
           thumbnail,
           dueDate,
         };
-        const burrow = await insertBurrow(obj);
+        const borrow = await insertBorrow(obj);
 
-        if (burrow) {
-          const bookBurrowed = await updateABookById(bookId, {
+        if (borrow) {
+          const bookBorrowed = await updateABookById(bookId, {
             isAvailable: false,
             expectedAvailable: dueDate,
           });

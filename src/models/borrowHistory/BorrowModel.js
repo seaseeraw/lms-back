@@ -1,26 +1,26 @@
 import BorrowSchema from "./BorrowSchema.js";
 
 // insert
-export const insertBurrow = (obj) => {
+export const insertBorrow = (obj) => {
   return BorrowSchema(obj).save();
 };
 
 //Read all for the admin || public
-export const getAllBurrows = (filter) => {
+export const getAllBorrows = (filter) => {
   return BorrowSchema.find(filter);
 };
 
-// get burrow by Id
-export const getABurrowById = (_id) => {
+// get borrow by Id
+export const getABorrowById = (_id) => {
   return BorrowSchema.findById(_id);
 };
 
-// update burrow by id
-export const updateABurrowById = (_id, obj) => {
+// update borrow by id
+export const updateABorrowById = (_id, obj) => {
   return BorrowSchema.findByIdAndUpdate(_id, obj);
 };
 
-// delete burrow by id
-export const deleteABurrowById = (_id) => {
+// delete borrow by id
+export const deleteABorrowById = (_id) => {
   return BorrowSchema.findByIdAndDelete(_id);
 };

@@ -5,6 +5,7 @@ import { connectMongoDB } from "./src/config/mongoConfig.js";
 import userRouter from "./src/routes/userRouter.js";
 import bookRouter from "./src/routes/bookRouter.js";
 import borrowRouter from "./src/routes/borrowRouter.js";
+import reviewRouter from "./src/routes/reviewRouter.js";
 
 // Express
 const app = express();
@@ -25,6 +26,9 @@ app.use("/api/v1/students", () => {
 
 // borrow routes
 app.use("/api/v1/borrow", borrowRouter);
+
+// review routes
+app.use("/api/v1/reviews", reviewRouter);
 
 // default response
 app.get("/", (req, res) => {
