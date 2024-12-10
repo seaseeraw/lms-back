@@ -6,6 +6,7 @@ import userRouter from "./src/routes/userRouter.js";
 import bookRouter from "./src/routes/bookRouter.js";
 import borrowRouter from "./src/routes/borrowRouter.js";
 import reviewRouter from "./src/routes/reviewRouter.js";
+import path from "path";
 
 // Express
 const app = express();
@@ -14,6 +15,8 @@ const PORT = config.port;
 // Middlewares
 app.use(cors());
 app.use(express.json());
+
+app.use("/assets", express.static("assets"));
 
 // user api
 app.use("/api/v1/users", userRouter);
