@@ -12,7 +12,7 @@ Content-Type: application/json
     "fName": "test",
     "lName": "shrestha",
     "phone": "4104444444",
-    "email": "test@gmail.com",
+    "email": "dingosloth@gmail.com",
     "password": "123456"
 }
 
