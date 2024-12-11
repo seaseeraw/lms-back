@@ -2,6 +2,7 @@
 # yarn lockfile v1
 
 
+<<<<<<< HEAD
 "@hapi/hoek@^9.0.0", "@hapi/hoek@^9.3.0":
   version "9.3.0"
   resolved "https://registry.npmjs.org/@hapi/hoek/-/hoek-9.3.0.tgz"
@@ -14,6 +15,8 @@
   dependencies:
     "@hapi/hoek" "^9.0.0"
 
+=======
+>>>>>>> 8c1d449dc92e3403c1bcb75f273cf0a8337358f0
 "@mapbox/node-pre-gyp@^1.0.11":
   version "1.0.11"
   resolved "https://registry.npmjs.org/@mapbox/node-pre-gyp/-/node-pre-gyp-1.0.11.tgz"
@@ -36,6 +39,7 @@
   dependencies:
     sparse-bitfield "^3.0.3"
 
+<<<<<<< HEAD
 "@sideway/address@^4.1.5":
   version "4.1.5"
   resolved "https://registry.npmjs.org/@sideway/address/-/address-4.1.5.tgz"
@@ -53,6 +57,8 @@
   resolved "https://registry.npmjs.org/@sideway/pinpoint/-/pinpoint-2.0.0.tgz"
   integrity sha512-RNiOoTPkptFtSVzQevY/yWtZwf/RxyVnPy/OcA9HBM3MlGDnBEYL5B41H0MTn0Uec8Hi+2qUtTfG2WWZBmMejQ==
 
+=======
+>>>>>>> 8c1d449dc92e3403c1bcb75f273cf0a8337358f0
 "@types/webidl-conversions@*":
   version "7.0.3"
   resolved "https://registry.npmjs.org/@types/webidl-conversions/-/webidl-conversions-7.0.3.tgz"
@@ -148,9 +154,15 @@ brace-expansion@^1.1.7:
     concat-map "0.0.1"
 
 bson@^6.7.0:
+<<<<<<< HEAD
   version "6.10.0"
   resolved "https://registry.npmjs.org/bson/-/bson-6.10.0.tgz"
   integrity sha512-ROchNosXMJD2cbQGm84KoP7vOGPO6/bOAW0veMMbzhXLqoZptcaYRVLitwvuhwhjjpU1qP4YZRWLhgETdgqUQw==
+=======
+  version "6.9.0"
+  resolved "https://registry.yarnpkg.com/bson/-/bson-6.9.0.tgz#2be50049430dceaa9300402520fe03e4ed5fdfd6"
+  integrity sha512-X9hJeyeM0//Fus+0pc5dSUMhhrrmWwQUtdavaQeF3Ta6m69matZkGWV/MrBcnwUeLC8W9kwwc2hfkZgUuCX3Ig==
+>>>>>>> 8c1d449dc92e3403c1bcb75f273cf0a8337358f0
 
 buffer-equal-constant-time@1.0.1:
   version "1.0.1"
@@ -273,11 +285,14 @@ detect-libc@^2.0.0:
   resolved "https://registry.npmjs.org/detect-libc/-/detect-libc-2.0.3.tgz"
   integrity sha512-bwy0MGW55bG41VqxxypOsdSdGqLwXPI/focwgTYCFMbdUiBAxLg9CFzG08sz2aqzknwiX7Hkl0bQENjg8iLByw==
 
+<<<<<<< HEAD
 dotenv@^16.4.5:
   version "16.4.5"
   resolved "https://registry.npmjs.org/dotenv/-/dotenv-16.4.5.tgz"
   integrity sha512-ZmdL2rui+eB2YwhsWzjInR8LldtZHGDoQ1ugH85ppHKwpUHL7j7rN0Ti9NCnGiQbhaZ11FpR+7ao1dNsmduNUg==
 
+=======
+>>>>>>> 8c1d449dc92e3403c1bcb75f273cf0a8337358f0
 ecdsa-sig-formatter@1.0.11:
   version "1.0.11"
   resolved "https://registry.npmjs.org/ecdsa-sig-formatter/-/ecdsa-sig-formatter-1.0.11.tgz"
@@ -527,6 +542,7 @@ is-fullwidth-code-point@^3.0.0:
   resolved "https://registry.npmjs.org/is-fullwidth-code-point/-/is-fullwidth-code-point-3.0.0.tgz"
   integrity sha512-zymm5+u+sCsSWyD9qNaejV3DFvhCKclKdizYaJUuHA83RLjb7nSuGnddCHGv0hk+KY7BMAlsWeK4Ueg6EV6XQg==
 
+<<<<<<< HEAD
 joi@^17.13.3:
   version "17.13.3"
   resolved "https://registry.npmjs.org/joi/-/joi-17.13.3.tgz"
@@ -538,6 +554,8 @@ joi@^17.13.3:
     "@sideway/formula" "^3.0.1"
     "@sideway/pinpoint" "^2.0.0"
 
+=======
+>>>>>>> 8c1d449dc92e3403c1bcb75f273cf0a8337358f0
 jsonwebtoken@^9.0.2:
   version "9.0.2"
   resolved "https://registry.npmjs.org/jsonwebtoken/-/jsonwebtoken-9.0.2.tgz"
@@ -704,10 +722,17 @@ mongodb@~6.10.0:
     bson "^6.7.0"
     mongodb-connection-string-url "^3.0.0"
 
+<<<<<<< HEAD
 mongoose@^8.8.2:
   version "8.8.2"
   resolved "https://registry.npmjs.org/mongoose/-/mongoose-8.8.2.tgz"
   integrity sha512-jCTSqDANfRzk909v4YoZQi7jlGRB2MTvgG+spVBc/BA4tOs1oWJr//V6yYujqNq9UybpOtsSfBqxI0dSOEFJHQ==
+=======
+mongoose@^8.8.1:
+  version "8.8.1"
+  resolved "https://registry.yarnpkg.com/mongoose/-/mongoose-8.8.1.tgz#1caab80aa2e91d6121b13ca020890d18327c45f3"
+  integrity sha512-l7DgeY1szT98+EKU8GYnga5WnyatAu+kOQ2VlVX1Mxif6A0Umt0YkSiksCiyGxzx8SPhGe9a53ND1GD4yVDrPA==
+>>>>>>> 8c1d449dc92e3403c1bcb75f273cf0a8337358f0
   dependencies:
     bson "^6.7.0"
     kareem "2.6.3"
@@ -756,11 +781,14 @@ node-fetch@^2.6.7:
   dependencies:
     whatwg-url "^5.0.0"
 
+<<<<<<< HEAD
+=======
 nodemailer@^6.9.16:
   version "6.9.16"
-  resolved "https://registry.npmjs.org/nodemailer/-/nodemailer-6.9.16.tgz"
+  resolved "https://registry.yarnpkg.com/nodemailer/-/nodemailer-6.9.16.tgz#3ebdf6c6f477c571c0facb0727b33892635e0b8b"
   integrity sha512-psAuZdTIRN08HKVd/E8ObdV6NO7NTBY3KsC30F7M4H1OnmLCUNaS56FpYxyb26zWLSyYF9Ozch9KYHhHegsiOQ==
 
+>>>>>>> 8c1d449dc92e3403c1bcb75f273cf0a8337358f0
 nopt@^5.0.0:
   version "5.0.0"
   resolved "https://registry.npmjs.org/nopt/-/nopt-5.0.0.tgz"
