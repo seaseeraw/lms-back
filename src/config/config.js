@@ -11,4 +11,13 @@ export const config = {
     refreshSecret: process.env.JWT_REFRESH_SECRET || "refresh",
     expiresIn: process.env.JWT_EXPIRE || "1d",
   },
+  mailerOptions: {
+    host: process.env.SMTP_HOST || "smtp.example.com",
+    port: process.env.SMTP_PORT || "587",
+    auth: {
+      user: process.env.SMTP_USER,
+      pass: process.env.SMTP_PASSWORD,
+    },
+    secure: false,
+  },
 };

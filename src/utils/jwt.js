@@ -3,9 +3,9 @@ import { insertToken } from "../models/session/SessionSchema.js";
 import { config } from "../config/config.js";
 import { updateUser } from "../models/user/UserModel.js";
 
-export const signAccessJWT = (payload) => {
+export const signAccessJWT = (payload, expiresIn = "1d") => {
   const token = JWT.sign(payload, config.jwt.secret, {
-    expiresIn: "15m",
+    expiresIn,
   });
   insertToken({ token });
   return token;

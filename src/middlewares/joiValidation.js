@@ -36,7 +36,7 @@ export const newBookValidation = (req, res, next) => {
   const schema = Joi.object({
     title: STR_REQUIRED,
     author: STR_REQUIRED,
-    thumbnail: STR_REQUIRED,
+    // thumbnail: STR_REQUIRED,
     isbn: STR_REQUIRED,
     publishedYear: Joi.number(),
     description: STR_REQUIRED,
@@ -58,9 +58,9 @@ export const updateBookValidation = (req, res, next) => {
   return joiValidator({ req, res, next, schema });
 };
 
-// ============= Burrow validation
+// ============= Borrow validation
 
-export const newBurrowValidation = (req, res, next) => {
+export const newBorrowValidation = (req, res, next) => {
   const schema = Joi.object({
     bookId: STR_REQUIRED,
     bookTitle: STR_REQUIRED,
@@ -75,12 +75,11 @@ export const newReviewValidation = (req, res, next) => {
   const schema = Joi.object({
     bookId: STR_REQUIRED,
     bookTitle: STR_REQUIRED,
-    burrowId: STR_REQUIRED,
+    borrowId: STR_REQUIRED,
     message: STR_REQUIRED,
     ratings: NUM_REQ,
     tilte: STR_REQUIRED,
     userId: STR_REQUIRED,
-    userName: STR_REQUIRED,
     thumbnail: STR_REQUIRED,
   });
   return joiValidator({ req, res, next, schema });
