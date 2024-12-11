@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 import express from "express";
 import cors from "cors";
 import { config } from "./src/config/config.js";
@@ -65,34 +64,3 @@ connectMongoDB()
   .catch((error) => {
     console.log("Error connecting to Database");
   });
-=======
-import express from 'express'
-import { connetMongoDB } from './src/config/mongoConfig.js';
-const app =express()
-const PORT =process.env.PORT || 8000;
-
-// connetMongoDB()
-
-// Router
-app.get("/",(res,req)=>{
-    console.log("calling")
-    res.send("docne")
-})
-
-
-// Listen
-connetMongoDB()
-.then(()=>{
-    app.listen(PORT,(error)=>{
-        error
-        ? console.log(error)
-        :console.log(`server iis running http://localhost:${PORT} `)
-    });
-})
-.catch((error)=> console.error(error));
-// app.listen(PORT,(error)=>{
-//     error
-//     ? console.log(error)
-//     :console.log(`server iis running http://localhost:${PORT} `)
-// });
->>>>>>> 8c1d449dc92e3403c1bcb75f273cf0a8337358f0
